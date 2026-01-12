@@ -1,4 +1,4 @@
-package tw.edu.ntub.imd.birc.practice.ilocker;
+package tw.edu.ntub.imd.birc.coffeeshop.ilocker;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,3 +11,4 @@ class CampusApplicationTests {
     }
 
 }
+

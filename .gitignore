@@ -264,8 +264,8 @@ HELP.md
 
 application-local.*
 /src/main/resources/openapi.yaml
-practice-backend/modules/practice-config/.gradle
-practice-backend/modules/practice-database-config/.gradle
-practice-backend/modules/practice-database-config/src/generated/
-modules/practice-database-config/src/generated
+coffee-shop/modules/coffee-shop-config/.gradle
+coffee-shop/modules/coffee-shop-database-config/.gradle
+coffee-shop/modules/coffee-shop-database-config/src/generated/
+modules/coffee-shop-database-config/src/generated
 
