@@ -3,7 +3,7 @@ springdoc:
     path: /api
 spring:
   application:
-    name: practice
+    name: coffee-shop
   main:
     banner-mode: off
     allow-bean-definition-overriding: true
@@ -16,9 +16,9 @@ spring:
       max-request-size: 250MB
   datasource:
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: ${practice.database.url}
-    username: ${practice.database.account}
-    password: ${practice.database.password}
+    url: ${coffee-shop.database.url}
+    username: ${coffee-shop.database.account}
+    password: ${coffee-shop.database.password}
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
@@ -47,9 +47,9 @@ server:
     encoding:
       charset: UTF-8
   image:
-    url: '${server.path}${server.servlet.context-path}${server.image.name}'
+    url: "${server.path}${server.servlet.context-path}${server.image.name}"
   file:
-    url: '${server.path}${server.servlet.context-path}${server.file.name}'
+    url: "${server.path}${server.servlet.context-path}${server.file.name}"
 logging:
   config: classpath:log4j2.yml
   level:

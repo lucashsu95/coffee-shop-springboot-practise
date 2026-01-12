@@ -99,8 +99,8 @@ repositories {
 
 dependencies {
     implementation 'tw.edu.ntub.birc:common:1.1.0'
-    implementation project('modules:practice-config')
-    implementation project('modules:practice-database-config')
+    implementation project('modules:coffee-shop-config')
+    implementation project('modules:coffee-shop-database-config')
     implementation 'com.google.code.findbugs:jsr305:3.0.2'
     implementation 'org.yaml:snakeyaml:1.26'
     implementation 'org.apache.commons:commons-text:1.8'
@@ -125,6 +125,7 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'com.h2database:h2'
     implementation 'org.freemarker:freemarker:2.3.31'
     implementation 'commons-codec:commons-codec:1.15'
     implementation 'net.sf.json-lib:json-lib:2.4:jdk15'

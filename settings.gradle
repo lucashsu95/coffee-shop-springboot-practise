@@ -1,4 +1,4 @@
-rootProject.name = 'practice'
-include 'modules:practice-config'
-include 'modules:practice-database-config'
+rootProject.name = 'coffee-shop'
+include 'modules:coffee-shop-config'
+include 'modules:coffee-shop-database-config'
 

@@ -2,15 +2,15 @@ server:
   path: http://IP:{port}
   image:
     name: image
-    path: '存放路徑 Ex: D:\practice\UploadFile\${server.image.name}\'
+    path: '存放路徑 Ex: D:\coffee-shop\UploadFile\${server.image.name}\'
   file:
     name: file
-    path: '存放路徑 Ex: D:\practice\UploadFile\${server.file.name}\'
+    path: '存放路徑 Ex: D:\coffee-shop\UploadFile\${server.file.name}\'
 logging:
   level:
     sqltiming: DEBUG
     resultsettable: DEBUG
-practice:
+coffee-shop:
   database:
     url: jdbc:log4jdbc:mysql://{資料庫IP}:{port}/{資料庫名字}?serverTimezone=Asia/Taipei
     account: 帳號
