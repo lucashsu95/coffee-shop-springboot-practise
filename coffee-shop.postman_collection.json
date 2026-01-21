@@ -1,0 +1,428 @@
+{
+  "info": {
+    "_postman_id": "c41b9922-1f17-4e8b-b739-956f9543f303",
+    "name": "coffee-shop",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "34164005"
+  },
+  "item": [
+    {
+      "name": "get products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/v1/products",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"巴拿馬藝妓\",\r\n  \"type\": \"BEAN\",\r\n  \"price\": 680,\r\n  \"stock\": 50\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product exception 1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"巴拿馬藝妓\",\r\n  \"type\": \"BEAN\",\r\n  \"price\": \"A\",\r\n  \"stock\": 50\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product exception 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"type\": \"BEAN\",\r\n  \"price\": 680,\r\n  \"stock\": 50\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product exception 3",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"巴拿馬藝妓\",\r\n  \"type\": \"GAY\",\r\n  \"price\": 680,\r\n  \"stock\": 50\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create product exception 4",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"巴拿馬藝妓\",\r\n  \"type\": \"BEAN\",\r\n  \"price\": -680,\r\n  \"stock\": -50\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add product stock",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"quantity\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products/1/stock/in",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1",
+            "stock",
+            "in"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add product stock exception 1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"quantity\": 30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products/99/stock/in",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "99",
+            "stock",
+            "in"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "add product stock exception 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"quantity\": -30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products/1/stock/in",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1",
+            "stock",
+            "in"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "decrease product stock",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"quantity\": 20\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products/1/stock/out",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1",
+            "stock",
+            "out"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "decrease product stock exception 1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"quantity\": 20\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products/99/stock/out",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "99",
+            "stock",
+            "out"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "decrease product stock exception 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"quantity\": 999999\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products/1/stock/out",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1",
+            "stock",
+            "out"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "decrease product stock exception 3",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"quantity\": -30\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/v1/products/1/stock/out",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1",
+            "stock",
+            "out"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get transactions by productId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/v1/products/1/transactions",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "1",
+            "transactions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get transactions by productId exception 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/v1/products/99/transactions",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "products",
+            "99",
+            "transactions"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

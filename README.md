@@ -371,5 +371,6 @@ GET /api/v1/products/{id}/transactions
 ## 注意事項 (違反一律視為0分記算)
 
 - 記得先匯入 `coffee-shop.sql`
+- 可以在 postman 匯入 `coffee-shop.postman.collection.json`
 - 不可**新增/修改/刪除**資料庫架構
 - 需複製`resources`裡面的`application-local-example.yml`命名為`application-local.yml`，再根據個人需求修改裡面的值
