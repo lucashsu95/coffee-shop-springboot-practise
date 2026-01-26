@@ -121,7 +121,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(productBean)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isCreated())
                                 .andExpect(jsonPath("$.result", is(true)))
                                 .andExpect(jsonPath("$.message", is("新增成功")));
 
@@ -152,7 +152,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(json))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", containsString("name")));
 
@@ -174,7 +174,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(json))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", containsString("單價")));
 
@@ -196,7 +196,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(json))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", containsString("產品類型")));
 
@@ -217,7 +217,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(productBean)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", containsString("價格和庫存必須大於0")));
 
@@ -238,7 +238,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(productBean)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", containsString("價格和庫存必須大於0")));
 
@@ -299,7 +299,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isNotFound())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", is("產品不存在")));
 
@@ -325,7 +325,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", containsString("數量必須大於0")));
 
@@ -388,7 +388,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isNotFound())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", is("產品不存在")));
 
@@ -414,7 +414,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", is("庫存不足，目前庫存: 10")));
 
@@ -441,7 +441,7 @@ class ProductControllerTest {
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(objectMapper.writeValueAsString(request)))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isBadRequest())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", containsString("數量必須大於0")));
 
@@ -510,7 +510,7 @@ class ProductControllerTest {
         void testGetTransactions_ProductNotFound() throws Exception {
                 mockMvc.perform(get("/api/v1/products/9999/transactions"))
                                 .andDo(print())
-                                .andExpect(status().isOk())
+                                .andExpect(status().isNotFound())
                                 .andExpect(jsonPath("$.result", is(false)))
                                 .andExpect(jsonPath("$.message", is("產品不存在")));
 
@@ -570,4 +570,3 @@ class ProductControllerTest {
                 productDAO.deleteById(product.getId());
         }
 }
-
